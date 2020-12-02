@@ -1,6 +1,8 @@
 # My Development Logs
 
-## start to build env
+## 2020/12/1
+start to build env
+
 [react env config](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658)
 > babel webpack react react-dom
 
@@ -15,3 +17,9 @@ npm config set registry https://registry.npm.taobao.org
 npm config set disturl https://registry.npm.taobao.org
 npm config set electron_mirror http://npm.taobao.org/mirrors/electron/
 ```
+
+## 2020/12/2
+`@types/react @types/react-dom`get React React-DOM  [说明](https://www.tslang.cn/docs/handbook/react-&-webpack.html)
+
+**problem:**
+1. start electron failed on WSL, so start it on PowerShell.
