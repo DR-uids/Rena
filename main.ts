@@ -8,8 +8,9 @@ function createWindow () {
       nodeIntegration: true
     }
   })
-
+ 
   win.loadFile('index.html')
+  win.openDevTools()
 }
 
 app.whenReady().then(createWindow)

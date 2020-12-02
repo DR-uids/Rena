@@ -3,17 +3,21 @@
   "version": "0.1.0",
   "main": "main.ts",
   "scripts": {
-    "start": "electron ."
+    "start": "webpack-dev-server --open && electron ."
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "babel-loader": "^8.2.2",
     "electron": "^11.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "webpack": "^5.9.0"
+    "webpack": "^5.9.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }
