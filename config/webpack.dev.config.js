@@ -22,6 +22,9 @@ module.exports = {
           }
         ],
         exclude: /node_modules/
+      },
+      {
+        test: /tsx?$/
       }
     ]
   }

@@ -19,3 +19,14 @@ npm config set electron_mirror http://npm.taobao.org/mirrors/
 
 **碰到的问题：**
 1. wsl启动electron有问题，采用PowerShell
+2. webpack@5.9.0 webpack-cli@4.2.0 webpack-dev-server@3.11.0 有冲突，`package.json`中`"start": "webpack-dev-server"`，`yarn start`报错`Error: Cannot find module 'webpack-cli/bin/config-yargs'`
+## 2020年12月3日
+**解决问题：**
+webpack@5.9.0 webpack-cli@4.2.0 webpack-dev-server@3.11.0 冲突问题解决办法：
+
+方法一：使用webpack-dev-server@4.0.0beta，问题解决
+
+方法二：`package.json`中`"start": "webpack-dev-server"`改为`"start": "webpack server"`
+
+当前采用方法二
+
