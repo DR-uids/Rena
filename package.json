@@ -1,7 +1,7 @@
 {
   "name": "rena",
   "version": "0.1.0",
-  "main": "main.ts",
+  "main": "main.js",
   "scripts": {
     "start": "webpack serve && electron ."
   },

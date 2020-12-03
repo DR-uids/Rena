@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './main.ts',
+  entry: './main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '1.bundle.js'
@@ -10,21 +10,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.js|jsx$/,
+        test: /.jsx?$/,
         use: [
           {
             loader: 'babel-loader',
             options: {
               "presets": ["@babel/preset-env"],
-              "presets": ["@babel/preset-react"],
-              "presets": ["@babel/preset-typescript"],
+              "presets": ["@babel/preset-react"]
             }
           }
         ],
         exclude: /node_modules/
-      },
-      {
-        test: /tsx?$/
       }
     ]
   }
