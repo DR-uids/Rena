@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "main.ts",
   "scripts": {
-    "start": "webpack server && electron ."
+    "start": "webpack serve && electron ."
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

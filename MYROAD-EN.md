@@ -28,10 +28,10 @@ npm config set electron_mirror http://npm.taobao.org/mirrors/electron/
 ## 2020/12/3
 
 **solved**
-webpack@5.9.0 webpack-cli@4.2.0 webpack-dev-server@3.11.0 conflict, method:
+webpack@5.9.0 webpack-cli@4.2.0 webpack-dev-server@3.11.0 conflict, [method](https://github.com/webpack/webpack-dev-server/issues/2424):
 
 Plan A: use `webpack-dev-server@4.0.0beta`
 
-Plan B: in `package.json`, change `"start": "webpack-dev-server"` to `"start": "webpack server"`
+Plan B: in `package.json`, change `"start": "webpack-dev-server"` to `"start": "webpack serve"`
 
 Now, I uesd plan B.

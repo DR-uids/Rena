@@ -22,11 +22,11 @@ npm config set electron_mirror http://npm.taobao.org/mirrors/
 2. webpack@5.9.0 webpack-cli@4.2.0 webpack-dev-server@3.11.0 有冲突，`package.json`中`"start": "webpack-dev-server"`，`yarn start`报错`Error: Cannot find module 'webpack-cli/bin/config-yargs'`
 ## 2020年12月3日
 **解决问题：**
-webpack@5.9.0 webpack-cli@4.2.0 webpack-dev-server@3.11.0 冲突问题解决办法：
+webpack@5.9.0 webpack-cli@4.2.0 webpack-dev-server@3.11.0 冲突问题[解决办法](https://github.com/webpack/webpack-dev-server/issues/2424)：
 
 方法一：使用webpack-dev-server@4.0.0beta，问题解决
 
-方法二：`package.json`中`"start": "webpack-dev-server"`改为`"start": "webpack server"`
+方法二：`package.json`中`"start": "webpack-dev-server"`改为`"start": "webpack serve"`
 
 当前采用方法二
 
