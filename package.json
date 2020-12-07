@@ -2,18 +2,19 @@
   "name": "rena",
   "version": "0.1.0",
   "main": "main.js",
+  "homepage": ".",
   "scripts": {
-    "start": "webpack serve && electron ."
+    "dev": "webpack serve --config config/webpack.dev.config.js",
+    "start": "electron ."
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
-    "@babel/preset-typescript": "^7.12.7",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
     "babel-loader": "^8.2.2",
     "electron": "^11.0.3",
+    "html-webpack-plugin": "^4.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "webpack": "^5.9.0",

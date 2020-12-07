@@ -35,3 +35,42 @@ Plan A: use `webpack-dev-server@4.0.0beta`
 Plan B: in `package.json`, change `"start": "webpack-dev-server"` to `"start": "webpack serve"`
 
 Now, I uesd plan B.
+
+**other**
+Give up to use TypeScript.
+
+## 2020/12/4
+**Problem:**
+Build failed：
+```
+Module not found: Error: Can't resolve 'path' in 'C:\code\Rena\node_modules\electron'
+
+BREAKING CHANGE: webpack < 5 used to include polyfills for node.js core modules by default.
+This is no longer the case. Verify if you need this module and configure a polyfill for it.
+
+If you want to include a polyfill, you need to:
+        - add a fallback 'resolve.fallback: { "path": require.resolve("path-browserify") }'
+        - install 'path-browserify'
+If you don't want to include a polyfill, you can use an empty module like this:
+        resolve.fallback: { "path": false }
+```
+**Solution:** webpack dev config file add `target: 'electron-renderer'` for active node.js.
+
+## 2020/12/7
+**Problem:**
+1. Error: `Cannot read property 'whenReady' of undefined` and `Uncaught ReferenceError: require is not defined`
+
+**Solution:**
+
+remove global electron, `yarn add electron --dev`, webpack entry should not be `main.js` of electron, but `index.js` of react;
+
+**Problem:**
+
+2. `document.GetElementById is not a function`
+
+**Solution:**
+
+should be `GetElementById`, not`GetElementByID`
+
+**Problem:**
+3. `index.html`中`<div id='root'></div>`元素不显示，并且报错`Target container is not a DOM element`：引入`html-webpack-plugin`，并加入`template`路径为`index.html`的绝对路径；

@@ -1,5 +1,5 @@
 const { app, BrowserWindow } = require('electron')
-
+console.log(require.resolve('electron'));
 function createWindow () {
   const win = new BrowserWindow({
     width: 800,
@@ -8,8 +8,7 @@ function createWindow () {
       nodeIntegration: true
     }
   })
- 
-  win.loadFile('index.html')
+  win.loadURL('http://localhost:7000/')
   win.openDevTools()
 }
 
