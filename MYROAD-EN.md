@@ -73,4 +73,9 @@ remove global electron, `yarn add electron --dev`, webpack entry should not be `
 should be `GetElementById`, not`GetElementByID`
 
 **Problem:**
-3. `index.html`中`<div id='root'></div>`元素不显示，并且报错`Target container is not a DOM element`：引入`html-webpack-plugin`，并加入`template`路径为`index.html`的绝对路径；
+
+3. Could not show `<div id='root'></div>` in `index.html`, and threw errot `Target container is not a DOM element`: 
+
+**Solution:**
+
+ `yarn add html-webpack-plugin --dev`, and make sur the `template` path is the absolute path of `index.html`；
