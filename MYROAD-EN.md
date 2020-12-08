@@ -79,3 +79,19 @@ should be `GetElementById`, not`GetElementByID`
 **Solution:**
 
  `yarn add html-webpack-plugin --dev`, and make sur the `template` path is the absolute path of `index.html`；
+
+## 2020/12/8
+**Problem:**
+
+1. 
+```
+Uncaught TypeError: Cannot destructure property 'dialog' of '__webpack_require__(...).remote' as it is undefined
+```
+**Solution:**
+
+use `remote` of electron need add code in `main.js`：
+```
+webPreferences: {
+  nableRemoteModule:true
+}
+```
