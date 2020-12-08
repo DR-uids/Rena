@@ -1,3 +1,49 @@
-$primaryColor: #503BE9;
-$subColor: #e9e8f1;
-$borderColor: #aaaaaa;
+// color
+$primary-color: #503BE9;
+$scondary-color: #e9e8f1;
+$wihte: #ffffff;
+
+// border
+$border-color: #eeeeee;
+$border: 1px solid $border-color;
+
+// font
+$font: 14px;
+$small-font: 12px;
+
+// button
+$button-height-basis: 12px;
+$primary-button-height: $button-height-basis * 3;
+$small-button-height: $button-height-basis * 2;
+@mixin button {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  color: $primary-color;
+}
+@mixin button-hover {
+  color: $wihte;
+}
+.button {
+  @include button;
+  background-color: $scondary-color;
+  height: $primary-button-height;
+  min-width: 120px;
+  border-radius: $primary-button-height / 2;
+  line-height: $primary-button-height;
+  font-size: $font;
+}
+.small-button {
+  @include button;
+  background-color: $scondary-color;
+  height: $small-button-height;
+  min-width: 80px;
+  border-radius: $small-button-height / 2;
+  line-height: $small-button-height;
+  font-size: $small-font;
+}
+.small-button:hover {
+  @include button-hover;
+  background-color: $primary-color;
+  box-shadow: 2px 10px 14px rgba($color: $primary-color, $alpha: 0.2);
+}

@@ -26,19 +26,4 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
-// ipcMain.on('open-directory-dialog', function (e) {
-//   dialog.showOpenDialog({
-//     title: '请选择文件',
-//     properties: [
-//       'openFile',
-//       'multiSelections'
-//     ]
-//   }, files => {
-//     if (files) {
-//       console.log(e);
-//       e.sender.send('selectedItem', files)
-//     }
-//   })
-// })
   

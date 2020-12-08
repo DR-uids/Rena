@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Drag from '../../component/drag'
+import AddFileButton from '../component/addFileBtn'
 import './index.scss'
 
 
@@ -7,7 +7,12 @@ class Home extends Component {
   render () {
     return (
       <div className='homeContainer'>
-        <Drag />
+        <div className='fileArea'>
+          <AddFileButton />
+        </div>
+        <div className='editArea'>
+
+        </div>
       </div>
     )
   }
