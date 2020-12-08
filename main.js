@@ -1,11 +1,12 @@
 const { app, BrowserWindow } = require('electron')
-console.log(require.resolve('electron'));
+
 function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule:true
     }
   })
   win.loadURL('http://localhost:7000/')
@@ -25,3 +26,19 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+// ipcMain.on('open-directory-dialog', function (e) {
+//   dialog.showOpenDialog({
+//     title: '请选择文件',
+//     properties: [
+//       'openFile',
+//       'multiSelections'
+//     ]
+//   }, files => {
+//     if (files) {
+//       console.log(e);
+//       e.sender.send('selectedItem', files)
+//     }
+//   })
+// })
+  

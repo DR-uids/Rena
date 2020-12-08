@@ -1,0 +1,19 @@
+@import '../../public/common.scss';
+
+.homeContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dragContainer {
+  width: 90%;
+  height: 90%;
+  border: 2px dashed $borderColor;
+  border-radius: 8px;
+  background-color: $subColor;
+}
+.dragContainer p {
+  color: $primaryColor;
+}

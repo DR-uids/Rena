@@ -56,3 +56,17 @@ If you don't want to include a polyfill, you can use an empty module like this:
 1. `Cannot read property 'whenReady' of undefined`， `Uncaught ReferenceError: require is not defined`：删除全局electron，dev引入electron，webpack入口不应该是electron的`main.js`而应该是react的`index.js`；
 2. `document.GetElementById is not a function`：`GetElementById`写错了，写成了`GetElementByID`；
 3. `index.html`中`<div id='root'></div>`元素不显示，并且报错`Target container is not a DOM element`：引入`html-webpack-plugin`，并加入`template`路径为`index.html`的绝对路径；
+
+## 2020年12月8日
+**解决问题：**
+1. 
+```
+Uncaught TypeError: Cannot destructure property 'dialog' of '__webpack_require__(...).remote' as it is undefined
+```
+
+调用electron的`remote`方法需要在`main.js`中加入如下代码：
+```
+webPreferences: {
+  nableRemoteModule:true
+}
+```
