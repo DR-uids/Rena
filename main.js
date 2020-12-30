@@ -9,7 +9,8 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule:true
-    }
+    },
+    autoHideMenuBar: true // hide menu bar
   })
   win.loadURL('http://localhost:7000/')
   win.openDevTools()

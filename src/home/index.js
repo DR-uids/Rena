@@ -1,41 +1,26 @@
-import React, { Component } from 'react'
+import React, {useState } from 'react'
 import AddFileButton from '../component/addFileBtn'
-import Database from '../../db'
+import FileList from '../component/fileList'
 import './index.scss'
 
-const { fileTable } = Database
-
-class Home extends Component {
-  constructor(props) {
-    super(props)
-  }
-  dab () {
-    fileTable.keys().then(function(keys) {
-      // 包含所有 key 名的数组
-      console.log(keys);
-    }).catch(function(err) {
-        // 当出错时，此处代码运行
-        console.log(err);
-    });
-  }
-  render () {
-    this.dab()
-    return (
-      <div className='homeContainer'>
+function Home () {
+  const [files, setFiles] = useState([])
+  return (
+    <div className='homeContainer'>
         <div className='fileArea'>
           <div>
-            <AddFileButton />
+            <AddFileButton setFiles={setFiles} />
           </div>
-          <ul>
-            
-          </ul>
+          {
+            files && files.length !== 0 ?
+            <FileList files={files}/> : null
+          }
         </div>
         <div className='editArea'>
 
         </div>
       </div>
-    )
-  }
+  )
 }
 
 export default Home
