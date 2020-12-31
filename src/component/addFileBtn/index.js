@@ -21,8 +21,9 @@ function AddFileButton (props) {
       const filePaths = res.filePaths // get file path
       const canceled =  res.canceled
       if (!canceled) {
-        console.log(filePaths)
+        // console.log(filePaths)
         props.setFiles(filePaths)
+        props.setExt('All') // if select new files , reset the suffix
       } else {
         console.log("未选择文件")
       }
