@@ -9,11 +9,17 @@
 
 .fileArea {
   margin: 10px;
-  border-right: $border;
-  flex-basis: 400px;
+  // flex-basis: 400px;
+  width: 400px;
+  position: relative;
 }
 
 .editArea {
   width: 100%;
   flex-shrink: 1;
+  border-left: $border;
+}
+
+.editAreaMain {
+  margin: 0 20px;
 }

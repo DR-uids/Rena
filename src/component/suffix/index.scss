@@ -1,5 +1,12 @@
 @import '../../../public/common.scss';
 
+.suffix {
+  padding-top: 20px;
+  ul {
+    margin-top: 10px;
+  }
+}
+
 @mixin suffixItemCommon {
   display: inline-block;
   width: 80px;

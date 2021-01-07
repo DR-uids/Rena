@@ -5,7 +5,7 @@ const path = require('path')
 const getExtSet = (filesArr) => { // Use Set() to keep ext unique.
   const extSet = new Set()
   filesArr.forEach(f => {
-    const ext = path.extname(f)
+    const ext = f.split('.').pop().toLowerCase()
     extSet.add(ext)
   })
   return (Array.from(extSet))
@@ -33,7 +33,7 @@ function SuffixPin (props) {
   }
   
   return (
-    <div>
+    <div className='suffix'>
       <h3>Select Suffix</h3>
       <ul>
         <SuffixPinAll cursor={cursor} selectExt={selectExt}/>

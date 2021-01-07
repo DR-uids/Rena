@@ -1,9 +1,18 @@
+.fileListContainer {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  bottom: 0;
+}
 .fileListBox{
-  margin: 10px;
-  height: 100%;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  bottom: 0;
   overflow-y: scroll;
 }
 .fileItem {
   font-size: 14px;
   margin: 10px;
+  white-space:nowrap;
 }
