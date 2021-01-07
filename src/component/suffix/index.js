@@ -2,34 +2,7 @@ import React, {useState} from 'react'
 import './index.scss'
 const path = require('path') 
 
-// let suffixItemCommonStyle = {
-//   display: 'inline-block',
-//   width: 80,
-//   marginLeft: 10,
-//   marginRight: 10,
-//   textAlign: 'center',
-//   height: 24,
-//   borderRadius: 12,
-//   lineHeight: '24px',
-//   cursor: 'pointer',
-//   backgroundColor: '#e9e8f1'
-// }
-
-// let suffixItemClickedStyle = {
-//   display: 'inline-block',
-//   width: 80,
-//   marginLeft: 10,
-//   marginRight: 10,
-//   textAlign: 'center',
-//   height: 24,
-//   borderRadius: 12,
-//   lineHeight: '24px',
-//   cursor: 'pointer',
-//   backgroundColor: '#503BE9'
-// }
-
-
-const getExtSet = (filesArr) => {
+const getExtSet = (filesArr) => { // Use Set() to keep ext unique.
   const extSet = new Set()
   filesArr.forEach(f => {
     const ext = path.extname(f)
@@ -38,13 +11,16 @@ const getExtSet = (filesArr) => {
   return (Array.from(extSet))
 }
 
+const switchSuffixPinStyle = (tagRelateExt, nowSelectExt) => { // when click pin, change the btn style
+  return tagRelateExt === nowSelectExt ? 'suffixItemClicked' : 'suffixItemCommon'
+}
+
 function SuffixPinAll (props) {
-  let suffixItemStyle = 'all' === props.cursor ? 'suffixItemClicked' : 'suffixItemCommon'
-  return <li className={suffixItemStyle} onClick={e => props.selectExt(e, 'all')}>All</li>
+  return <li className={switchSuffixPinStyle('All', props.cursor)} onClick={e => props.selectExt(e, 'All')}>All</li>
 }
 
 function SuffixPin (props) {
-  const [cursor, setCursor] = useState(0)
+  const [cursor, setCursor] = useState(0) // set now select suffix state, for change the btn style.
 
   const files = props.files
   
@@ -52,9 +28,6 @@ function SuffixPin (props) {
 
   const selectExt = (e, ext) => {
     e.preventDefault()
-    // setTagStyleChange(false)
-    console.log(props.ext)
-    console.log(ext)
     setCursor(ext)
     props.setExt(e.target.innerText)
   }
@@ -67,8 +40,7 @@ function SuffixPin (props) {
         {
           extArr.length !== 0 ?
           extArr.map(ext => {
-            let suffixItemStyle = ext === cursor ? 'suffixItemClicked' : 'suffixItemCommon'
-            return <li  key={ext} className={suffixItemStyle} onClick={e => selectExt(e, ext)}>{ext}</li>
+            return <li  key={ext} className={switchSuffixPinStyle(ext, cursor)} onClick={e => selectExt(e, ext)}>{ext}</li>
           })
           : null
         }

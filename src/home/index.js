@@ -8,13 +8,14 @@ const path = require('path')
 
 const getExtFiles = (ext, originFiles) => {
   let newFiles
-  if(ext !== 'All') {
+  // if now select suffix pin, change the list to the relative files. 
+  // else remain the all files list.
+  if(ext !== 'All') { 
     newFiles = originFiles.filter(f => {
       if (path.extname(f) === ext) {
         return f
       }
     })
-   
   } else {
     newFiles = originFiles
   }
@@ -23,12 +24,8 @@ const getExtFiles = (ext, originFiles) => {
 
 function Home () {
   const [files, setFiles] = useState([]) // files Array State
-  const [ext, setExt] = useState('All') // the suffix be selected
-
-  // console.log(ext)
-
-  let showFiles = getExtFiles(ext, files)
-  console.log(showFiles)
+  const [ext, setExt] = useState('All') // the suffix be selected, default state is 'All'.
+  let showFiles = getExtFiles(ext, files) // for change the files list view.
   return (
     <div className='homeContainer'>
         <div className='fileArea'>
