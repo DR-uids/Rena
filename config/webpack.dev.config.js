@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: '[hash].bundle.js'
+    filename: '[fullhash].bundle.js'
   },
   module: {
     rules: [
@@ -39,7 +39,7 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, "../dist"),
-    port: 7000,
+    port: 1011,
     // hot: true,
     // open: true
   },

@@ -1,0 +1,28 @@
+@import '../../../public/common.scss';
+
+@mixin suffixItemCommon {
+  display: inline-block;
+  width: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  height: 24px;
+  border-radius: 12px;
+  line-height: 24px;
+  cursor: pointer;
+  background-color: $scondary-color;
+}
+.suffixItemCommon {
+  @include suffixItemCommon;
+  background-color: $scondary-color;
+  color: #060225;
+  &:hover {
+    background-color: #dfdee7;
+  }
+}
+
+.suffixItemClicked {
+  @include suffixItemCommon;
+  background-color: $primary-color;
+  color: #ffffff;
+}

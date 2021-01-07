@@ -12,7 +12,7 @@ function createWindow () {
     },
     autoHideMenuBar: true // hide menu bar
   })
-  win.loadURL('http://localhost:7000/')
+  win.loadURL('http://localhost:1011/')
   win.openDevTools()
 }
 

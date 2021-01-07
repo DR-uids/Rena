@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, { useState } from 'react'
 import AddFileButton from '../component/addFileBtn'
 import SuffixPin from '../component/suffix'
 import FileList from '../component/fileList'
@@ -25,7 +25,7 @@ function Home () {
   const [files, setFiles] = useState([]) // files Array State
   const [ext, setExt] = useState('All') // the suffix be selected
 
-  console.log(ext)
+  // console.log(ext)
 
   let showFiles = getExtFiles(ext, files)
   console.log(showFiles)
@@ -41,7 +41,7 @@ function Home () {
           }
         </div>
         <div className='editArea'>
-          <SuffixPin files={files} setExt={setExt}/>
+          <SuffixPin files={files} setExt={setExt} ext={ext}/>
         </div>
       </div>
   )
