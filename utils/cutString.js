@@ -1,3 +1,0 @@
-function cutString(s) {
-  // if
-}

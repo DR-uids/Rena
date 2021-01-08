@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import AddFileButton from '../component/addFileBtn'
 import SuffixPin from '../component/suffix'
 import FileList from '../component/fileList'
+import RenameRules from '../component/renameRules'
 import './index.scss'
 
 const path = require('path')
@@ -39,6 +40,7 @@ function Home () {
         <div className='editArea'>
           <div className='editAreaMain'>
             <SuffixPin files={files} setExt={setExt} ext={ext}/>
+            <RenameRules files={files} setFiles={setFiles}/>
           </div>
         </div>
       </div>

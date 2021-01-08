@@ -7,18 +7,14 @@ const path = require('path')
 function FileList (props) {
   
   const files = props.files
+  const dir = path.dirname(files[0])
   return (
     <div className='fileListContainer'>
-      <p>{path.dirname(files[0])}</p>
+      <p className='dir'>{dir}<span>{dir}</span></p>
+      <p className='filesNumber'>{`Files Number: ${files.length}`}</p>
       <ul className='fileListBox'>
       {
         files.map(f => {
-          // f = path.basename(f)
-          // const pathSplitArr = f.split(".")
-          // const ext = pathSplitArr.pop()
-          // let pathPrefix = pathSplitArr.join('')
-          // console.log(pathPrefix)
-          // console.log(pathPrefix.slice(0,12)+'...')
           return <li className='fileItem'  key={f}>{path.basename(f)}</li>
         }     
         )

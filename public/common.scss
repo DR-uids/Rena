@@ -50,6 +50,7 @@ $small-button-height: $button-height-basis * 2;
 .big-button {
   @include button;
   min-width: 120px;
+  max-width: 360px;
   width: 100%;
   height: 36px;
   line-height: 36px;
